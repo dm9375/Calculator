@@ -3,18 +3,25 @@ package rit;
  * This Object represents all dogs.
  */
 public class Dog extends Animal {
-  private int numberOfLegs;
 
-  public Dog() {
-    numberOfLegs = 4;
+  public Dog()
+  {
+    super(4);
   }
 
+  @Override
   public int getNumberOfLegs() {
-    return numberOfLegs;
+    return super.getNumberOfLegs();
   }
 
   @Override
   public String move() {
     return "chase my tail";
   }
+
+  public static void main(String[] args) {
+    Animal buster = new Dog();
+    System.out.println(buster);
+  }
+
 }

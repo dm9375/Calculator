@@ -13,12 +13,10 @@ public class CalculatorApp {
     final double sideB = 4;
     BinaryOperation pythagoreanCalculation =
         new BinaryOperation(new PowerOperator(),
-            // Square root of
-            new BinaryOperation(new AddOperator(),
-                // A^2 + B^2
-                new BinaryOperation(new PowerOperator(), sideA, 2),
-                new BinaryOperation(new PowerOperator(), sideB, 2)),
-            0.5);
+                new BinaryOperation(new AddOperator(),
+                        new BinaryOperation(new PowerOperator(), sideA, 2).getResult(),
+                        new BinaryOperation(new PowerOperator(), sideB, 2).getResult()).getResult(),
+                0.5);
 
     final double sideC = pythagoreanCalculation.getResult();
     if (Math.abs(sideC - 5) < 0.001) {
