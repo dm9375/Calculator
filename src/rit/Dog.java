@@ -19,9 +19,4 @@ public class Dog extends Animal {
     return "chase my tail";
   }
 
-  public static void main(String[] args) {
-    Animal buster = new Dog();
-    System.out.println(buster);
-  }
-
 }
